@@ -1,5 +1,7 @@
 package com.bawei.xianmuer.network;
 
+import com.bawei.xianmuer.network.cookie.CookiesManager;
+
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -18,11 +20,11 @@ public class RetrofitFactory {
 
 
     public static OkHttpClient okHttpClient = new OkHttpClient.Builder()
-//            .cookieJar(new CookiesManager())
+            .cookieJar(new CookiesManager())
             .connectTimeout(20, TimeUnit.SECONDS)
             .readTimeout(20,TimeUnit.SECONDS)
             .writeTimeout(20,TimeUnit.SECONDS)
-//            .addInterceptor(new LoggingInterceptor())
+            .addInterceptor(new LoggingInterceptor())
             .build();
 
 
